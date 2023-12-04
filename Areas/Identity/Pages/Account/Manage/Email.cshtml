@@ -1,0 +1,26 @@
+@page
+@model ChangeEmailModel
+
+@{
+    ViewData["Title"] = "Manage email";
+}
+
+<h3>Manage email</h3>
+
+<div class="row">
+    <div class="col-md-6">
+        <form method="post">
+            <div class="form-floating mb-3">
+                <input type="hidden" asp-for="Email" />
+                <input class="form-control" asp-for="Email" disabled="" type="text">
+                <label class="form-label" asp-for="Email">Email address</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" asp-for="NewEmail">
+                <label class="form-label" asp-for="NewEmail">New email</label>
+                <span class="invalid-feedback d-block" asp-validation-for="NewEmail"></span>
+            </div>
+
+            <button type="submit" class="w-100 btn btn-lg btn-primary">Change email</button>
+        </form>
+    </div>

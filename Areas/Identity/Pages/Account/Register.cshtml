@@ -1,0 +1,30 @@
+@page
+@model RegisterModel
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+<div class="row">
+    <form class="col-sm-6" method="post">
+        <div class="form-group my-3">
+            <label for="Email">Email address</label>
+            <input type="text" class="form-control" asp-for="Email" aria-describedby="emailHelp"
+                placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            <span class="invalid-feedback d-block" asp-validation-for="Email"></span>
+        </div>
+        <div class="form-group my-3">
+            <label for="Password">Password</label>
+            <input type="password" class="form-control" asp-for="Password" placeholder="Password">
+            <span class="invalid-feedback d-block" asp-validation-for="Password"></span>
+        </div>
+        <div class="form-group my-3">
+            <label for="PasswordConfirm">Confirm password</label>
+            <input type="password" class="form-control" asp-for="PasswordConfirm" placeholder="Confirm password">
+            <span class="invalid-feedback d-block" asp-validation-for="PasswordConfirm"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary my-3">Submit</button>
+    </form>
+</div>

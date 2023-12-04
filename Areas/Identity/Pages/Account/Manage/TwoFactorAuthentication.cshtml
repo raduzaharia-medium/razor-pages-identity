@@ -1,0 +1,33 @@
+@page
+@model TwoFactorModel
+
+@{
+    ViewData["Title"] = "Two-factor authentication";
+}
+
+<h3>Two-factor authentication</h3>
+
+<div class="row">
+    <div class="col-md-6">
+        <p>
+            <a class="btn btn-primary" asp-area="Identity" asp-page="/Account/Manage/EnableAuthenticator">Set up
+                authenticator app</a>
+        </p>
+
+        @if (Model.TwoFactorEnabled)
+        {
+            <p>
+                <a class="btn btn-primary" asp-area="Identity" asp-page="/Account/Manage/ResetAuthenticator">Reset
+                    authenticator app</a>
+            </p>
+            <p>
+                <a class="btn btn-primary" asp-area="Identity" asp-page="/Account/Manage/GenerateRecoveryCodes">Reset
+                    recovery codes</a>
+            </p>
+            <p>
+                <a class="btn btn-danger" asp-area="Identity" asp-page="/Account/Manage/Disable2fa">Disable two-factor
+                    authentication</a>
+            </p>
+        }
+    </div>
+</div>
